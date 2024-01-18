@@ -13,6 +13,7 @@ import requestRouter from './router/requestRouter.js'
 import restaurantRouter from './router/restaurantRouter.js'
 import serviceRouter from './router/serviceRouter.js'
 import supplierRouter from './router/supplierRouter.js'
+import pdfRouter from './router/pdfRouter.js'
 
 const app = express()
 const port = process.env.PORT || 3000
@@ -41,6 +42,9 @@ app.use(
 
 // Routes
 app.use('/documentation', express.static('public/documentation'))
+
+// Pdf
+app.use('/api', pdfRouter)
 
 // Endpoints
 app.use(api, basicSalaryRouter)
