@@ -14,6 +14,7 @@ import restaurantRouter from './router/restaurantRouter.js'
 import serviceRouter from './router/serviceRouter.js'
 import supplierRouter from './router/supplierRouter.js'
 import pdfRouter from './router/pdfRouter.js'
+import userRouter from './router/userRouter.js'
 
 const app = express()
 const port = process.env.PORT || 3000
@@ -56,6 +57,7 @@ app.use(api, requestRouter)
 app.use(api, restaurantRouter)
 app.use(api, serviceRouter)
 app.use(api, supplierRouter)
+app.use(api, userRouter)
 
 // Server
 const server = app.listen(port, () => {
